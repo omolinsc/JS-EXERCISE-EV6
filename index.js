@@ -365,26 +365,45 @@ console.log("- - - - - ITERATION # 7 REDUCE - - - - -");
 // 7.1 Dado el siguiente array, haz una suma de todos las notas de los examenes de 
 // los alumnos usando la función .reduce().
 
-// const exams = [
-//     {name: 'Yuyu Cabeza Crack', score: 5}, 
-//     {name: 'Maria Aranda Jimenez', score: 1}, 
-//     {name: 'Cristóbal Martínez Lorenzo', score: 6}, 
-//     {name: 'Mercedez Regrera Brito', score: 7},
-//     {name: 'Pamela Anderson', score: 3},
-//     {name: 'Enrique Perez Lijó', score: 6},
-//     {name: 'Pedro Benitez Pacheco', score: 8},
-//     {name: 'Ayumi Hamasaki', score: 4},
-//     {name: 'Robert Kiyosaki', score: 2},
-//     {name: 'Keanu Reeves', score: 10}
-// ];
+const exams = [
+    {name: 'Yuyu Cabeza Crack', score: 5}, 
+    {name: 'Maria Aranda Jimenez', score: 1}, 
+    {name: 'Cristóbal Martínez Lorenzo', score: 6}, 
+    {name: 'Mercedez Regrera Brito', score: 7},
+    {name: 'Pamela Anderson', score: 3},
+    {name: 'Enrique Perez Lijó', score: 6},
+    {name: 'Pedro Benitez Pacheco', score: 8},
+    {name: 'Ayumi Hamasaki', score: 4},
+    {name: 'Robert Kiyosaki', score: 2},
+    {name: 'Keanu Reeves', score: 10}
+];
 
+const sumNotes = exams.reduce(function(accumulator,exam){
+	return accumulator + exam.score;
+}, 0);
 
+console.log("El Reduce del 7.1 es:", sumNotes);
 
 // 7.2 Dado el mismo array, haz una suma de todos las notas de los examenes de los 
 // alumnos que esten aprobados usando la función .reduce().
 
+const sumNotes0 = exams.reduce(function(accumulator,exam){
+	if (exam.score >= 5) {
+		return accumulator + exam.score;
+	} else {
+		return accumulator;
+	}
+}, 0);
+
+console.log("El Reduce del 7.2 es:", sumNotes0);
+
 // 7.3 Dado el mismo array, haz la media de las notas de todos los examenes .reduce().
 
+const mediaNotes = exams.reduce(function(accumulator,exam){
+	return (accumulator + exam.score);
+}, 0);
+
+console.log("El Reduce del 7.3 es:", (mediaNotes/exams.length));
 
 
 
@@ -393,7 +412,7 @@ console.log("- - - - - ITERATION # 7 REDUCE - - - - -");
 console.log("");
 console.log("- - - - - ITERATION # 8 BONUS - - - - -");
 
-// 6.1 Dado el siguiente javascript filtra los videojuegos por gender = 'RPG' usando 
+// 8.1 Dado el siguiente javascript filtra los videojuegos por gender = 'RPG' usando 
 // .filter() y usa .reduce() para conseguir la media de sus .score. 
 // La función .find() también podría ayudarte para el contrar el genero 'RPG' en el 
 // array .gender.
