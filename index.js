@@ -7,10 +7,22 @@ console.log("- - - - - ITERATION # 1 ARROWS - - - - -");
 //? que por defecto el valor de a = 10 y de b = 5. Haz que la función muestre 
 //? por consola la suma de los dos parametros.
 
+const it1 = (a=10,b=5) => {
+    let result = a + b;
+    return result;
+}
+
 // 1.1 Ejecuta esta función sin pasar ningún parametro
+
+console.log("El valor del apartado 1.1 es:", it1());
+
 // 1.2 Ejecuta esta función pasando un solo parametro
+
+console.log("El valor del apartado 1.2 es:", it1(20), "le pasamos el valor 20");
+
 // 1.3 Ejecuta esta función pasando dos parametros
 
+console.log("El valor del apartado 1.3 es:", it1(20,10), "le pasamos los valores 20 y 10");
 
 
 //* Iteración #2: Destructuring
