@@ -258,22 +258,22 @@ const streamers1 = [
 
 //! Not working
 
-let action = function myFunction() {
-    let x = document.getElementById("input").value;
-    console.log(x);
-    return x;
-};
+//* let action = function myFunction() {
+//*     let x = document.getElementById("input").value;
+//*     console.log(x);
+//*     return x;
+//* };
 
-const streamerInput = streamers1.filter(function(streamer){
-    let text = action();
-    if (streamer.name.includes(text)){    
-        return streamer;
-    }
-});
+//* const streamerInput = streamers1.filter(function(streamer){
+//*     let text = action();
+//*     if (streamer.name.includes(text)){    
+//*         return streamer;
+//*     }
+//* });
 
-document.getElementById("input").addEventListener("input", action);
+//* document.getElementById("input").addEventListener("input", action);
 
-console.log("El Filter del 5.5 es:", streamerInput);
+//* console.log("El Filter del 5.5 es:", streamerInput);
 
 
 // 5.7 Dado el siguiente html y javascript, utiliza .filter() para mostrar por consola 
@@ -310,31 +310,51 @@ console.log("");
 console.log("- - - - - ITERATION # 6 FIND - - - - -");
 
 // 6.1 Dado el siguiente array, usa .find() para econtrar el número 100.
-// const numbers = [32, 21, 63, 95, 100, 67, 43];
+const numbers = [32, 21, 63, 95, 100, 67, 43];
+
+const numberFound = numbers.find(function(element) { return element === 100});
+console.log("El Find del 6.1 es:", numberFound);
 
 // 6.2 Dado el siguiente array, usa .find() para econtrar la pelicula del año 2010.
-// const movies = [
-// 	{title: 'Madagascar', stars: 4.5, date: 2015},
-// 	{title: 'Origen', stars: 5, date: 2010},
-// 	{title: 'Your Name', stars: 5, date: 2016}
-// ];
+const movies = [
+	{title: 'Madagascar', stars: 4.5, date: 2015},
+	{title: 'Origen', stars: 5, date: 2010},
+	{title: 'Your Name', stars: 5, date: 2016}
+];
+
+const movieFound = movies.find(function(movie) {
+    if (movie.date === 2010) return movie;
+});
+
+console.log("El Find del 6.2 es:", movieFound);
 
 // 6.3 Dado el siguiente javascript, usa .find() para econtrar el alien de nombre 
 // 'Cucushumushu' y la mutación 'Porompompero'. Una vez que los encuentres, usa 
 // spread operator para fusionarlos teniendo en cuenta que el objeto de la mutación 
 // lo queremos meter en la propiedad .mutation del objeto fusionado.
-// const aliens = [
-// 	{name: 'Zalamero', planet: 'Eden', age: 4029},
-// 	{name: 'Paktu', planet: 'Andromeda', age: 32},
-// 	{name: 'Cucushumushu', planet: 'Marte', age: 503021}
-// ];
-// const mutations = [
-// 	{name: 'Porompompero', description: 'Hace que el alien pueda adquirir la habilidad de tocar el tambor'},
-// 	{name: 'Fly me to the moon', description: 'Permite volar, solo y exclusivamente a la luna'},
-// 	{name: 'Andando que es gerundio', description: 'Invoca a un señor mayor como Personal Trainer'}
-// ];
+const aliens = [
+	{name: 'Zalamero', planet: 'Eden', age: 4029},
+	{name: 'Paktu', planet: 'Andromeda', age: 32},
+	{name: 'Cucushumushu', planet: 'Marte', age: 503021}
+];
+const mutations = [
+	{name: 'Porompompero', description: 'Hace que el alien pueda adquirir la habilidad de tocar el tambor'},
+	{name: 'Fly me to the moon', description: 'Permite volar, solo y exclusivamente a la luna'},
+	{name: 'Andando que es gerundio', description: 'Invoca a un señor mayor como Personal Trainer'}
+];
 
+const alienFound = aliens.find(function(alien) { 
+    if (alien.name === "Cucushumushu") return alien;
+});
 
+const mutationFound = mutations.find(function(mutation) { 
+    if (mutation.name === "Porompompero") return mutation;
+});
+
+//! Not the desired result
+
+const foundFusion = {...alienFound, ...mutationFound};
+console.log("El Find del 6.3 es:", foundFusion);
 
 
 //* Iteración #7: Reduce
@@ -357,6 +377,8 @@ console.log("- - - - - ITERATION # 7 REDUCE - - - - -");
 //     {name: 'Robert Kiyosaki', score: 2},
 //     {name: 'Keanu Reeves', score: 10}
 // ];
+
+
 
 // 7.2 Dado el mismo array, haz una suma de todos las notas de los examenes de los 
 // alumnos que esten aprobados usando la función .reduce().
