@@ -120,34 +120,57 @@ console.log("- - - - - ITERATION # 4 MAP - - - - -");
 
 // 4.1 Dado el siguiente array, devuelve un array con sus nombres 
 // utilizando .map().
-// const users = [
-// 	{id: 1, name: 'Abel'},
-// 	{id:2, name: 'Julia'},
-// 	{id:3, name: 'Pedro'},
-// 	{id:4, name: 'Amanda'}
-// ];
+const users = [
+	{id: 1, name: 'Abel'},
+	{id:2, name: 'Julia'},
+	{id:3, name: 'Pedro'},
+	{id:4, name: 'Amanda'}
+];
+
+const usersName = users.map(function(userName){return userName.name});
+console.log("El Map del 4.1 es:", usersName);
+
 
 // 4.2 Dado el siguiente array, devuelve una lista que contenga los valores 
 // de la propiedad .name y cambia el nombre a 'Anacleto' en caso de que 
 // empiece por 'A'.
-// const users = [
-// 	{id: 1, name: 'Abel'},
-// 	{id:2, name: 'Julia'},
-// 	{id:3, name: 'Pedro'},
-// 	{id:4, name: 'Amanda'}
-// ];
+const users0 = [
+	{id: 1, name: 'Abel'},
+	{id:2, name: 'Julia'},
+	{id:3, name: 'Pedro'},
+	{id:4, name: 'Amanda'}
+];
+
+const users0Name = users0.map(function(user){
+    let letter = user.name;
+    if (letter.charAt() === "A"  || letter.charAt() === "a"){
+        return "Anacleto";
+    } else {
+        return user.name
+    }
+});
+console.log("El Map del 4.2 es:", users0Name);
+
 
 // 4.3 Dado el siguiente array, devuelve una lista que contenga los valores 
 // de la propiedad .name y añade al valor de .name el string ' (Visitado)' 
 // cuando el valor de la propiedad isVisited = true.
-// const cities = [
-// 	{isVisited:true, name: 'Tokyo'}, 
-// 	{isVisited:false, name: 'Madagascar'},
-// 	{isVisited:true, name: 'Amsterdam'}, 
-// 	{isVisited:false, name: 'Seul'}
-// ];
+const cities = [
+	{isVisited:true, name: 'Tokyo'}, 
+	{isVisited:false, name: 'Madagascar'},
+	{isVisited:true, name: 'Amsterdam'}, 
+	{isVisited:false, name: 'Seul'}
+];
 
+const citiesMap = cities.map(function(city){
+    if(city.isVisited === true){
+        return city.name + " (Visitado)";
+    } else {
+        return city.name;
+    }  
+});
 
+console.log("El Map del 4.3 es:", citiesMap);
 
 //* Iteración #5: Filter
 
