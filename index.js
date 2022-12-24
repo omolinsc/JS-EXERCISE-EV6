@@ -34,27 +34,40 @@ console.log("- - - - - ITERATION # 2 DESTRUCTURING - - - - -");
 // del objeto usando object destructuring e imprimelas por consola. Cuidado, 
 // no hace falta hacer destructuring del array, solo del objeto.
 
-// const game = {title: 'The last us 2', gender: ['action', 'zombie', 'survival'], year: 2020}
+const game = {title: 'The last us 2', gender: ['action', 'zombie', 'survival'], year: 2020}
+
+let {title,year} = game;
+console.log("El Destructuring del 2.1 es:", title, year);
 
 // 2.2 En base al siguiente javascript, usa destructuring para crear 3 variables 
 // llamadas fruit1, fruit2 y fruit3, con los valores del array. Posteriormente
 // imprimelo por consola.
 
-// const fruits = ['Banana', 'Strawberry', 'Orange'];
+const fruits = ['Banana', 'Strawberry', 'Orange'];
+
+let [fruit1, fruit2, fruit3] = fruits;
+console.log("El Destructuring del 2.2 es:", fruit1, fruit2, fruit3);
 
 // 2.3 En base al siguiente javascript, usa destructuring para crear 2 
 // variables igualandolo a la función e imprimiendolo por consola.
 
-// const animalFunction = () => {
-//     return {name: 'Bengal Tiger', race: 'Tiger'}
-// };
+const animalFunction = () => {
+    return {animalName: 'Bengal Tiger', animalRace: 'Tiger'}
+};
+
+let {animalName, animalRace} = animalFunction();
+console.log("El Destructuring del 2.3 es:", animalName, animalRace);
 
 // 2.4 En base al siguiente javascript, usa destructuring para crear las 
 // variables name y itv con sus respectivos valores. Posteriormente crea 
 // 3 variables usando igualmente el destructuring para cada uno de los años 
 // y comprueba que todo esta bien imprimiendolo.
 
-// const car = {name: 'Mazda 6', itv: [2015, 2011, 2020] }
+const car = {carName: 'Mazda 6', itv: [2015, 2011, 2020] };
+
+let {carName, itv} = car;
+let [year0, year1, year2] = itv;
+console.log("El Destructuring del 2.4 es:", carName, year0, year1, year2);
 
 
 
