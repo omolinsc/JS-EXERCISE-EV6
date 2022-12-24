@@ -399,6 +399,8 @@ console.log("El Reduce del 7.2 es:", sumNotes0);
 
 // 7.3 Dado el mismo array, haz la media de las notas de todos los examenes .reduce().
 
+//! Must be a .reduce() way to calculate this...
+
 const mediaNotes = exams.reduce(function(accumulator,exam){
 	return (accumulator + exam.score);
 }, 0);
@@ -417,11 +419,25 @@ console.log("- - - - - ITERATION # 8 BONUS - - - - -");
 // La función .find() también podría ayudarte para el contrar el genero 'RPG' en el 
 // array .gender.
 
-// const videogames = [
-//     {name: 'Final Fantasy VII', genders: ['RPG'], score: 9.5},
-//     {name: 'Assasins Creed Valhala', genders: ['Aventura', 'RPG'], score: 4.5},
-//     {name: 'The last of Us 2', genders: ['Acción', 'Aventura'], score: 9.8},
-//     {name: 'Super Mario Bros', genders: ['Plataforma'], score: 8.5},
-//     {name: 'Genshin Impact', genders: ['RPG', 'Aventura'], score: 7.5},
-//     {name: 'Legend of Zelda: Breath of the wild', genders: ['RPG', 'La cosa más puto bonita que he visto nunca'], score: 10},
-// ]
+const videogames = [
+    {name: 'Final Fantasy VII', genders: ['RPG'], score: 9.5},
+    {name: 'Assasins Creed Valhala', genders: ['Aventura', 'RPG'], score: 4.5},
+    {name: 'The last of Us 2', genders: ['Acción', 'Aventura'], score: 9.8},
+    {name: 'Super Mario Bros', genders: ['Plataforma'], score: 8.5},
+    {name: 'Genshin Impact', genders: ['RPG', 'Aventura'], score: 7.5},
+    {name: 'Legend of Zelda: Breath of the wild', genders: ['RPG', 'La cosa más puto bonita que he visto nunca'], score: 10},
+]
+
+const gendersFilter = videogames.filter(function(game){
+	if (game.genders.includes("RPG")){
+		return game;
+	}
+
+});
+
+const sumScores = gendersFilter.reduce(function(accumulator,scores){
+	console.log("ACC",accumulator); console.log("SUMA",scores);
+	return accumulator + scores.score;
+}, 0);
+
+console.log("El Reduce del 8.1 es:", sumScores/gendersFilter.length);
